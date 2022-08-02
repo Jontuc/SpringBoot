@@ -44,6 +44,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
         } catch (Exception e){
             logger.error("Fallo el metodo doFilterInternal");
         }
+        filterChain.doFilter(request, response);
     }
     
     private String getToken(HttpServletRequest request){
